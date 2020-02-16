@@ -78,6 +78,7 @@
       await reader.scan();
       log("> Scan started");
 
+      /*
       reader.addEventListener("error", () => {
         log("Argh! Cannot read data from the NFC tag. Try a different one?");
       });
@@ -86,6 +87,17 @@
         log(`> Serial Number: ${serialNumber}`);
         log(`> Records: (${message.records.length})`);
       });
+      */
+
+      reader.onerror = event => {
+        log("Argh! Cannot read data from the NFC tag. Try a different one?");
+        console.log(event);
+      };
+
+      reader.onreading = event => {
+        log('NDEF message read.');
+      };
+
     } catch (error) {
       log("Argh! " + error);
     }
