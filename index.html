@@ -91,7 +91,10 @@
 
       reader.onerror = event => {
         log("Argh! Cannot read data from the NFC tag. Try a different one?");
-        console.log(event);
+        console.log(">>>");
+        log(event);
+        console.log(">>>");
+
       };
 
       reader.onreading = event => {
