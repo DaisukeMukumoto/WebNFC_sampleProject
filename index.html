@@ -91,17 +91,18 @@
 
       reader.onerror = event => {
         log("Argh! Cannot read data from the NFC tag. Try a different one?");
-        console.log(">>>");
+        log("onerror |error =>");
         log(event);
-        console.log(">>>");
-
       };
 
       reader.onreading = event => {
         log('NDEF message read.');
+        log("onreading|event =>");
+        log(event);
       };
 
     } catch (error) {
+      log("try catch =>");
       log("Argh! " + error);
     }
     });
