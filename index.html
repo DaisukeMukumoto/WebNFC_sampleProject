@@ -93,6 +93,8 @@
         log("Argh! Cannot read data from the NFC tag. Try a different one?");
         log("onerror |error =>");
         log(event);
+        log('reader =>');
+        log(reader);
       };
 
       reader.onreading = event => {
